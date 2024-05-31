@@ -17,27 +17,12 @@ const app = express()
 
 app.use(express.static("public"))
 
-app.get("/restart", function (req, res) {
-  setTimeout(() => {
-  exec(`find . -type f -name "*.mp3" -delete`)
-  exec(`find . -type f -name "*.m4a" -delete`)
-  exec(`npm cache clean --force`)
-  process.exit()
-  }, 5000)
+app.get("/", function (req, res) {
   res.send("<h1>Bot Is Running...</h1>")
 })
 
-app.get("/clear", function (req, res) {
-  setTimeout(() => {
-  exec(`find . -type f -name "*.mp3" -delete`)
-  exec(`find . -type f -name "*.m4a" -delete`)
-  exec(`npm cache clean --force`)
-  }, 1000)
-  res.send("<h1>Cache Was Clear...</h1>")
-})
-
 app.listen(process.env.PORT || 3000, 
-	() => console.log("Server is running..."));
+	() => console.log("Bot is running..."));
 
 function start() {
    let args = [path.join(__dirname, 'main.js'), ...process.argv.slice(2)]

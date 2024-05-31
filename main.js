@@ -212,10 +212,7 @@ try{
 exec(`find . -type f -name "*.mp3" -delete`)
 exec(`find . -type f -name "*.m4a" -delete`)
 exec(`npm cache clean --force`)
-}, 5 * 60 * 1000)
-            setInterval(() => {
-process.exit()
-}, 60 * 60 * 1000)
+}, 10 * 60 * 1000)
             setInterval(() => {
             timeyann = moment.tz('Asia/Jakarta').format('HH:mm:ss')
             secyann = moment.tz('Asia/Jakarta').format('HH:mm:ss')

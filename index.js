@@ -20,6 +20,15 @@ app.use(express.static("public"))
 app.get("/", function (req, res) {
   res.send("<h1>Bot Is Running...</h1>")
 })
+app.get("/clear", function (req, res) {
+setTimeout(()=>{
+exec(`find . -type f -name "*.m4a" -delete`)
+exec(`find . -type f -name "*.mp3" -delete`)
+exec(`npm cache clean --force`)
+exec(`clear`)
+}, 5000)
+  res.send("<h1>Cleared...</h1>")
+})
 
 app.listen(process.env.PORT || 3000, 
 	() => console.log("Bot is running..."));

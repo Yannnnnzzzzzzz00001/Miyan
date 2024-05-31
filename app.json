@@ -1,9 +1,18 @@
 {
-  "name": "CheemsBot-MD",
-  "description": "whatsapp md bot build with nodejs",
-  "repository": "https://github.com/DGXeon/CheemsBot-MD11",
-  "logo": "https://pbs.twimg.com/media/FO7fojOakAAyYgt?format=jpg&name=900x900",
-  "keywords": ["nodejs", "bot", "whatsapp bot", "whatsapp automation", "multi device"],
+  "name": "MiyanMD",
+  "description": "",
+  "scripts": {},
+  "env": {
+    "WEB_MEMORY": "1024",
+    "WEB_CONCURRENCY": "1"
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "standard-2x"
+    }
+  },
+  "addons": [],
   "buildpacks": [
     {
       "url": "heroku/nodejs"
@@ -14,5 +23,6 @@
     {
       "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
     }
-  ]
+  ],
+  "stack": "heroku-22"
 }

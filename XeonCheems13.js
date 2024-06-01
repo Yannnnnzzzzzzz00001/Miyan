@@ -403,7 +403,8 @@ caption: `${dgxeon + xeontext1}`,
                             title: botname,
                             body: ownername,
                             previewType: "PHOTO",
-                            thumbnail: await fetchBuffer('https://telegra.ph/file/d200c09d257304ace1e79.jpg'),//fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
+                            thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
+                            //await fetchBuffer('https://telegra.ph/file/d200c09d257304ace1e79.jpg'),
                             sourceUrl: wagc
                         }
                     },

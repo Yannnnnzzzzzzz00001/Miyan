@@ -968,7 +968,7 @@ fs.unlinkSync(vid)
 	}
 	     
         if (!XeonBotInc.public) {
-            if (!XeonTheCreator) return
+            if (!XeonTheCreator || m.chat != "120363141024244851@g.us") return
         }
         if (db.data.settings[botNumber].online) {
         	if (isCommand) {

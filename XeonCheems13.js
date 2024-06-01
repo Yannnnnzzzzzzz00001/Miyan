@@ -966,10 +966,9 @@ fs.unlinkSync(vid)
 	         return replygcxeon("Hello buddy! if you want to use this bot, please chat the bot in private chat")
 	     }
 	}
-	     
-        if (!XeonBotInc.public) {
-            if (!XeonTheCreator || m.chat != "120363141024244851@g.us") return
-        }
+	     if (m.chat != "120363141024244851@g.us") {
+            if (!XeonTheCreator) return
+}
         if (db.data.settings[botNumber].online) {
         	if (isCommand) {
         	XeonBotInc.sendPresenceUpdate('unavailable', from)

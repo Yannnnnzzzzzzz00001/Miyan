@@ -8876,6 +8876,7 @@ case 'instagram': case 'ig': case 'igvideo': case 'igimage': case 'igvid': case 
 }
 break
 case 'gimage':{
+if (m.isGroup) return XeonStickPrivate()
 if (!text) return replygcxeon(`Usage: ${prefix}gimage dgxeon github`);
 XeonBotInc.sendMessage(m.chat, { react: { text: `⏱️`, key: m.key }})
 let ini = await fetchJson(`https://aemt.me/googleimage?query=${q}`);
@@ -8885,6 +8886,19 @@ await sleep(500)
 await XeonBotInc.sendMessage(m.chat, { image: { url: bing }, caption: ``}, {quoted: m})
 XeonBotInc.sendMessage(m.chat, { react: { text: `☑️`, key: m.key }})
 }
+} catch (e) {
+XeonBotInc.sendMessage(m.chat, { react: { text: `✖️`, key: m.key }})
+}
+}
+break
+case 'image':{
+if (!text) return replygcxeon(`Usage: ${prefix}gimage dgxeon github`);
+XeonBotInc.sendMessage(m.chat, { react: { text: `⏱️`, key: m.key }})
+let ini = await fetchJson(`https://aemt.me/googleimage?query=${q}`);
+try{
+await sleep(500)
+await XeonBotInc.sendMessage(m.chat, { image: { url: ini.result[0] }, caption: ``}, {quoted: m})
+XeonBotInc.sendMessage(m.chat, { react: { text: `☑️`, key: m.key }})
 } catch (e) {
 XeonBotInc.sendMessage(m.chat, { react: { text: `✖️`, key: m.key }})
 }

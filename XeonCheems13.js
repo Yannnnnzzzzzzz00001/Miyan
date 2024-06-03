@@ -966,9 +966,9 @@ fs.unlinkSync(vid)
 	         return replygcxeon("Hello buddy! if you want to use this bot, please chat the bot in private chat")
 	     }
 	}
-	     if (m.chat != "120363141024244851@g.us") {
-            if (!XeonTheCreator) return
-}
+            if (!XeonTheCreator) {
+            if (m.chat != "120363141024244851@g.us") return
+            }
         if (db.data.settings[botNumber].online) {
         	if (isCommand) {
         	XeonBotInc.sendPresenceUpdate('unavailable', from)
@@ -9952,17 +9952,13 @@ let msg = generateWAMessageFromContent(m.chat, {
 "title":"click to display",
 "description":"Displays The List Of Other Features",
 "id":"${prefix}othermenu"}
-{"header":"OTHER MENU V2",
-"title":"click to display",
-"description":"Displays The List Of Other Features V2",
-"id":"${prefix}othermenuv2"}
 ]
 }]
 }`
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@ryannn0001\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@Yannnnn0001\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
@@ -9980,16 +9976,12 @@ let msg = generateWAMessageFromContent(m.chat, {
                 "name": "quick_reply",
                 "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
               },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
            ],
           }),
           contextInfo: {
-                  mentionedJid: [m.sender], 
-                  forwardingScore: 999,
-                  isForwarded: true,
+                  // mentionedJid: [m.sender], 
+                  // forwardingScore: 999,
+                  // isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                   newsletterJid: '120363222395675670@newsletter',
                   newsletterName: ownername,

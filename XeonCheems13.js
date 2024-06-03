@@ -286,7 +286,7 @@ module.exports = XeonBotInc = async (XeonBotInc, m, msg, chatUpdate, store) => {
         const isPremium= XeonTheCreator || checkPremiumUser(m.sender, premium)
         expiredPremiumCheck(XeonBotInc, m, premium)
         
-        const maxsendmulti = 1
+        const maxsendmulti = 3
         
         //theme sticker reply
         const XeonStickWait = () => {
@@ -295,29 +295,38 @@ module.exports = XeonBotInc = async (XeonBotInc, m, msg, chatUpdate, store) => {
         //XeonBotInc.sendMessage(from, { react: { text: `⏱️`, key: m.key }})
         }
         const XeonStickAdmin = () => {
-        let XeonStikRep = fs.readFileSync('./XeonMedia/theme/sticker_reply/admin.webp')
-        XeonBotInc.sendMessage(from, { sticker: XeonStikRep }, { quoted: m })
-        XeonBotInc.sendMessage(from, { react: { text: `❌`, key: m.key }})
+        // let XeonStikRep = fs.readFileSync('./XeonMedia/theme/sticker_reply/admin.webp')
+        // XeonBotInc.sendMessage(from, { sticker: XeonStikRep }, { quoted: m })
+        // XeonBotInc.sendMessage(from, { react: { text: `❌`, key: m.key }})
+        replygcxeon(`This Function Is Only For Admin❗`)
         }
         const XeonStickBotAdmin = () => {
-        let XeonStikRep = fs.readFileSync('./XeonMedia/theme/sticker_reply/botadmin.webp')
-        XeonBotInc.sendMessage(from, { sticker: XeonStikRep }, { quoted: m })
-        XeonBotInc.sendMessage(from, { react: { text: `❌`, key: m.key }})
+        // let XeonStikRep = fs.readFileSync('./XeonMedia/theme/sticker_reply/botadmin.webp')
+        // XeonBotInc.sendMessage(from, { sticker: XeonStikRep }, { quoted: m })
+        // XeonBotInc.sendMessage(from, { react: { text: `❌`, key: m.key }})
+                replygcxeon(`Bot Must Be An Admin❗`)
+
         }
         const XeonStickOwner = () => {
-        let XeonStikRep = fs.readFileSync('./XeonMedia/theme/sticker_reply/owner.webp')
-        XeonBotInc.sendMessage(from, { sticker: XeonStikRep }, { quoted: m })
-        XeonBotInc.sendMessage(from, { react: { text: `❌`, key: m.key }})
+        // let XeonStikRep = fs.readFileSync('./XeonMedia/theme/sticker_reply/owner.webp')
+        // XeonBotInc.sendMessage(from, { sticker: XeonStikRep }, { quoted: m })
+        // XeonBotInc.sendMessage(from, { react: { text: `❌`, key: m.key }})
+                replygcxeon(`This Function Is Only For Owner❗`)
+
         }
         const XeonStickGroup = () => {
-        let XeonStikRep = fs.readFileSync('./XeonMedia/theme/sticker_reply/group.webp')
-        XeonBotInc.sendMessage(from, { sticker: XeonStikRep }, { quoted: m })
-        XeonBotInc.sendMessage(from, { react: { text: `❌`, key: m.key }})
+        // let XeonStikRep = fs.readFileSync('./XeonMedia/theme/sticker_reply/group.webp')
+        // XeonBotInc.sendMessage(from, { sticker: XeonStikRep }, { quoted: m })
+        // XeonBotInc.sendMessage(from, { react: { text: `❌`, key: m.key }})
+                replygcxeon(`This Function Is Only In Group❗`)
+
         }
         const XeonStickPrivate = () => {
-        let XeonStikRep = fs.readFileSync('./XeonMedia/theme/sticker_reply/private.webp')
-        XeonBotInc.sendMessage(from, { sticker: XeonStikRep }, { quoted: m })
-        XeonBotInc.sendMessage(from, { react: { text: `❌`, key: m.key }})
+        // let XeonStikRep = fs.readFileSync('./XeonMedia/theme/sticker_reply/private.webp')
+        // XeonBotInc.sendMessage(from, { sticker: XeonStikRep }, { quoted: m })
+        // XeonBotInc.sendMessage(from, { react: { text: `❌`, key: m.key }})
+                replygcxeon(`This Function Is Only In Private Chat❗`)
+
         }
  
  //bug functions
@@ -965,7 +974,7 @@ fs.unlinkSync(vid)
 	         return replygcxeon("Hello buddy! if you want to use this bot, please chat the bot in private chat")
 	     }
 	}
-            if (!XeonTheCreator) {
+            if (!XeonTheCreator && XeonBotInc.public == false) {
             if (m.chat != "120363141024244851@g.us") return
             }
         if (db.data.settings[botNumber].online) {

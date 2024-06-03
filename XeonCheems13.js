@@ -436,17 +436,17 @@ caption: `${dgxeon + xeontext1}`,
 async function replygcxeon2(txt) {
 const xeonnewrep = {      
 contextInfo: {
-forwardingScore: 999,
-isForwarded: true,
+// forwardingScore: 999,
+// isForwarded: true,
 forwardedNewsletterMessageInfo: {
-newsletterName: "Click here to get $69",
+newsletterName: ownername,
 newsletterJid: "120363222395675670@newsletter",
 },
 externalAdReply: {  
 showAdAttribution: true,
 title: botname,
 body: ownername,
-thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
 sourceUrl: websitex
 },
 },

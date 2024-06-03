@@ -436,8 +436,7 @@ caption: `${dgxeon + xeontext1}`,
 async function replygcxeon2(txt) {
 const xeonnewrep = {      
 contextInfo: {
-// forwardingScore: 999,
-// isForwarded: true,
+
 forwardedNewsletterMessageInfo: {
 newsletterName: ownername,
 newsletterJid: "120363222395675670@newsletter",
@@ -9697,8 +9696,7 @@ video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
 contextInfo: {
-forwardingScore: 999,
-isForwarded: true,
+
 mentionedJid: [sender],
 forwardedNewsletterMessageInfo: {
 newsletterName: ownername,
@@ -10116,8 +10114,7 @@ video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
 contextInfo: {
-forwardingScore: 999,
-isForwarded: true,
+
 mentionedJid: [sender],
 forwardedNewsletterMessageInfo: {
 newsletterName: ownername,
@@ -10460,8 +10457,7 @@ video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
 contextInfo: {
-forwardingScore: 999,
-isForwarded: true,
+
 mentionedJid: [sender],
 forwardedNewsletterMessageInfo: {
 newsletterName: ownername,
@@ -10804,8 +10800,7 @@ video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
 contextInfo: {
-forwardingScore: 999,
-isForwarded: true,
+
 mentionedJid: [sender],
 forwardedNewsletterMessageInfo: {
 newsletterName: ownername,
@@ -11148,8 +11143,7 @@ video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
 contextInfo: {
-forwardingScore: 999,
-isForwarded: true,
+
 mentionedJid: [sender],
 forwardedNewsletterMessageInfo: {
 newsletterName: ownername,
@@ -11492,8 +11486,7 @@ video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
 contextInfo: {
-forwardingScore: 999,
-isForwarded: true,
+
 mentionedJid: [sender],
 forwardedNewsletterMessageInfo: {
 newsletterName: ownername,
@@ -11836,8 +11829,7 @@ video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
 contextInfo: {
-forwardingScore: 999,
-isForwarded: true,
+
 mentionedJid: [sender],
 forwardedNewsletterMessageInfo: {
 newsletterName: ownername,
@@ -12180,8 +12172,7 @@ video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
 contextInfo: {
-forwardingScore: 999,
-isForwarded: true,
+
 mentionedJid: [sender],
 forwardedNewsletterMessageInfo: {
 newsletterName: ownername,
@@ -12524,8 +12515,7 @@ video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
 contextInfo: {
-forwardingScore: 999,
-isForwarded: true,
+
 mentionedJid: [sender],
 forwardedNewsletterMessageInfo: {
 newsletterName: ownername,
@@ -12868,8 +12858,7 @@ video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
 contextInfo: {
-forwardingScore: 999,
-isForwarded: true,
+
 mentionedJid: [sender],
 forwardedNewsletterMessageInfo: {
 newsletterName: ownername,
@@ -13212,8 +13201,7 @@ video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
 contextInfo: {
-forwardingScore: 999,
-isForwarded: true,
+
 mentionedJid: [sender],
 forwardedNewsletterMessageInfo: {
 newsletterName: ownername,
@@ -13556,8 +13544,7 @@ video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
 contextInfo: {
-forwardingScore: 999,
-isForwarded: true,
+
 mentionedJid: [sender],
 forwardedNewsletterMessageInfo: {
 newsletterName: ownername,
@@ -13900,8 +13887,7 @@ video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
 contextInfo: {
-forwardingScore: 999,
-isForwarded: true,
+
 mentionedJid: [sender],
 forwardedNewsletterMessageInfo: {
 newsletterName: ownername,
@@ -14244,8 +14230,7 @@ video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
 contextInfo: {
-forwardingScore: 999,
-isForwarded: true,
+
 mentionedJid: [sender],
 forwardedNewsletterMessageInfo: {
 newsletterName: ownername,
@@ -14588,8 +14573,7 @@ video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
 contextInfo: {
-forwardingScore: 999,
-isForwarded: true,
+
 mentionedJid: [sender],
 forwardedNewsletterMessageInfo: {
 newsletterName: ownername,
@@ -14932,8 +14916,7 @@ video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
 contextInfo: {
-forwardingScore: 999,
-isForwarded: true,
+
 mentionedJid: [sender],
 forwardedNewsletterMessageInfo: {
 newsletterName: ownername,
@@ -15276,8 +15259,7 @@ video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
 contextInfo: {
-forwardingScore: 999,
-isForwarded: true,
+
 mentionedJid: [sender],
 forwardedNewsletterMessageInfo: {
 newsletterName: ownername,
@@ -15620,8 +15602,7 @@ video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
 contextInfo: {
-forwardingScore: 999,
-isForwarded: true,
+
 mentionedJid: [sender],
 forwardedNewsletterMessageInfo: {
 newsletterName: ownername,
@@ -15964,8 +15945,7 @@ video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
 contextInfo: {
-forwardingScore: 999,
-isForwarded: true,
+
 mentionedJid: [sender],
 forwardedNewsletterMessageInfo: {
 newsletterName: ownername,
@@ -16308,8 +16288,7 @@ video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
 contextInfo: {
-forwardingScore: 999,
-isForwarded: true,
+
 mentionedJid: [sender],
 forwardedNewsletterMessageInfo: {
 newsletterName: ownername,
@@ -16652,8 +16631,7 @@ video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
 contextInfo: {
-forwardingScore: 999,
-isForwarded: true,
+
 mentionedJid: [sender],
 forwardedNewsletterMessageInfo: {
 newsletterName: ownername,
@@ -16996,8 +16974,7 @@ video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
 contextInfo: {
-forwardingScore: 999,
-isForwarded: true,
+
 mentionedJid: [sender],
 forwardedNewsletterMessageInfo: {
 newsletterName: ownername,

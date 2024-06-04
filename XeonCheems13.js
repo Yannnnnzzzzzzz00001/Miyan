@@ -8686,20 +8686,21 @@ ${translatedChapterHindi.text}`
   }
   break
   case 'dalle': {
-  if (!text) return replygcxeon(`*This command generates images from text prompts*\n\n*𝙴xample usage*\n*${prefix + command} Beautiful anime girl*\n*${prefix + command} girl in pink dress*`)
-  try {
-  	replygcxeon('*Please wait, generating image...*')
-    const endpoint = `https://cute-tan-gorilla-yoke.cyclic.app/imagine?text=${encodeURIComponent(text)}`
-    const response = await fetch(endpoint)
-    if (response.ok) {
-      const imageBuffer = await response.buffer()
-      await XeonBotInc.sendMessage(m.chat, { image: imageBuffer }, {quoted: m})
-    } else {
-      throw '*Image generation failed*';
-    }
-  } catch {
-    replygcxeon('*Oops! Something went wrong while generating images. Please try again later.*')
+  if (!text) return replygcxeon(`*This command generates images from text prompts*\n\n*𝙴xample usage*\n*${prefix + command} Beautiful anime girl*\n*${prefix + command} girl in pink dress*\n\nUse English❗`)
+  await XeonBotInc.sendMessage(m.chat, {image : {url: `https://aemt.me/dalle?text=${text}`}}, { quoted: m })
   }
+  break
+  case 'gpt4': {
+  if (!text) return replygcxeon(`Example Usage : ${prefix + command} Halo nama kamu siapa?`)
+  let gptt = await fetchJson(`https://aemt.me/gpt4?text=${text}`)
+  await XeonBotInc.sendMessage(m.chat, {text : gptt.result}, { quoted: m })
+  }
+  break
+  case 'toanime': {
+  if (!quoted) return replygcxeon(`Send/Reply Images With Captions ${prefix+command}`)
+  let media = await XeonBotInc.downloadAndSaveMediaMessage(quoted)
+  let mem = await TelegraPh(media)
+  await XeonBotInc.sendMessage(m.chat, {image : {url: `https://aemt.me/toanime?url=${mem}`}}, { quoted: m })
   }
   break
   case 'translate':{
@@ -8892,7 +8893,7 @@ XeonBotInc.sendMessage(m.chat, { react: { text: `✖️`, key: m.key }})
 }
 break
 case 'image':{
-if (!text) return replygcxeon(`Usage: ${prefix}gimage dgxeon github`);
+if (!text) return replygcxeon(`Usage: ${prefix}image dgxeon github`);
 XeonBotInc.sendMessage(m.chat, { react: { text: `⏱️`, key: m.key }})
 let ini = await fetchJson(`https://aemt.me/googleimage?query=${q}`);
 try{

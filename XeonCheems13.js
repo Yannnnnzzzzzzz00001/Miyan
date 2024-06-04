@@ -8707,6 +8707,15 @@ ${translatedChapterHindi.text}`
   replygcxeon(geminii.result)
   }
   break
+  case 'pixiv2': {
+  if (m.isGroup && !XeonTheCreator) return XeonStickPrivate()
+  if (!text) return replygcxeon(`Example Usage : ${prefix + command} Shiroko`)
+  let pixivv = await fetchJson(`https://aemt.me/pixiv?query=${text}`)
+  for (let pixx of pixivv.result) {
+  await XeonBotInc.sendMessage(m.chat, {image : await fetchBuffer(pixx.urls.regular)}, { quoted: m })
+  }
+  }
+  break
   case 'toanime': {
   if (!quoted) return replygcxeon(`Send/Reply Images With Captions ${prefix+command}`)
   let media = await XeonBotInc.downloadAndSaveMediaMessage(quoted)

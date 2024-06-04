@@ -8687,13 +8687,14 @@ ${translatedChapterHindi.text}`
   break
   case 'dalle': {
   if (!text) return replygcxeon(`*This command generates images from text prompts*\n\n*𝙴xample usage*\n*${prefix + command} Beautiful anime girl*\n*${prefix + command} girl in pink dress*\n\nUse English❗`)
-  await XeonBotInc.sendMessage(m.chat, {image : {url: `https://aemt.me/dalle?text=${text}`}}, { quoted: m })
+  await XeonBotInc.sendMessage(m.chat, {image : await fetchBuffer(`https://aemt.me/dalle?text=${text}`)}, { quoted: m })
   }
   break
   case 'gpt4': {
   if (!text) return replygcxeon(`Example Usage : ${prefix + command} Halo nama kamu siapa?`)
   let gptt = await fetchJson(`https://aemt.me/gpt4?text=${text}`)
-  await XeonBotInc.sendMessage(m.chat, {text : gptt.result}, { quoted: m })
+  console.log(gptt)
+  replygcxeon(gptt.result)
   }
   break
   case 'toanime': {

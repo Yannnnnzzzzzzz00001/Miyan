@@ -8690,18 +8690,29 @@ ${translatedChapterHindi.text}`
   await XeonBotInc.sendMessage(m.chat, {image : await fetchBuffer(`https://aemt.me/dalle?text=${text}`)}, { quoted: m })
   }
   break
+  case 'stablediffusion': {
+  if (!text) return replygcxeon(`*This command generates images from text prompts*\n\n*𝙴xample usage*\n*${prefix + command} Beautiful anime girl*\n*${prefix + command} girl in pink dress*\n\nUse English❗`)
+  await XeonBotInc.sendMessage(m.chat, {image : await fetchBuffer(`https://aemt.me/stablediffusion?text=${text}`)}, { quoted: m })
+  }
+  break
   case 'gpt4': {
   if (!text) return replygcxeon(`Example Usage : ${prefix + command} Halo nama kamu siapa?`)
   let gptt = await fetchJson(`https://aemt.me/gpt4?text=${text}`)
-  console.log(gptt)
   replygcxeon(gptt.result)
+  }
+  break
+  case 'gemini': {
+  if (!text) return replygcxeon(`Example Usage : ${prefix + command} Halo nama kamu siapa?`)
+  let geminii = await fetchJson(`https://aemt.me/gemini?text=${text}`)
+  replygcxeon(geminii.result)
   }
   break
   case 'toanime': {
   if (!quoted) return replygcxeon(`Send/Reply Images With Captions ${prefix+command}`)
   let media = await XeonBotInc.downloadAndSaveMediaMessage(quoted)
   let mem = await TelegraPh(media)
-  await XeonBotInc.sendMessage(m.chat, {image : {url: `https://aemt.me/toanime?url=${mem}`}}, { quoted: m })
+  let aiurl = fetchJson(`https://aemt.me/toanime?url=${mem}`)
+  await XeonBotInc.sendMessage(m.chat, {image : await fetchBuffer(aiurl)}, { quoted: m })
   }
   break
   case 'translate':{

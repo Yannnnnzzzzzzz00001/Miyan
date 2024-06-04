@@ -5251,7 +5251,7 @@ contextInfo:{
             title:spotjson.data[0].title,
             body: botname,
             thumbnail: await fetchBuffer(spotjson.data[0].thumbnail),
-            sourceUrl: websitex,
+            sourceUrl: "https://spotify.com/",
             mediaType:2,
             mediaUrl:spotjson.data[0].url,
         }

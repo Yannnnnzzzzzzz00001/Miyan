@@ -8721,7 +8721,7 @@ ${translatedChapterHindi.text}`
   let media = await XeonBotInc.downloadAndSaveMediaMessage(quoted)
   let mem = await TelegraPh(media)
   let aiurl = fetchJson(`https://aemt.me/toanime?url=${mem}`)
-  await XeonBotInc.sendMessage(m.chat, {image : await fetchBuffer(aiurl)}, { quoted: m })
+  await XeonBotInc.sendMessage(m.chat, {image : await fetchBuffer(aiurl.url)}, { quoted: m })
   }
   break
   case 'translate':{

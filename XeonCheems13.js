@@ -5158,14 +5158,13 @@ break
 case 'igstalk': {
 if (!text) return replygcxeon(`Enter Instagram Username\n\nExample: ${prefix + command} Miyan`)
 let igst = fetchJson(`https://aemt.me/download/igstalk?username=${text}`)
-let txt = `
+replygcxeon(`
 ▢ *🔖Username:* ${igst.result.username}
 ▢ *🔖FullName:* ${igst.result.fullName}
 ▢ *📌Bio:* ${igst.result.bio}
 ▢ *👥Followers:* ${igst.result.followers}
 ▢ *🫂Following:* ${igst.result.following}
-`
-await XeonBotInc.sendMessage(m.chat, {image: await fetchBuffer(igst.result.photoUrl), caption: txt}, {quoted: m})
+`)
 }
 break
 case 'ghstalk': case 'githubstalk':{

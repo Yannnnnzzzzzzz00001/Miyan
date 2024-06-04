@@ -5156,19 +5156,16 @@ case 'tiktokstalk': {
 }
 break
 case 'igstalk': {
-if (!text) return replygcxeon(`Enter Instagram Username\n\nExample: ${prefix + command} unicorn_xeon13`)
-    let res = await fg.igStalk(text)
-    let te = `
-┌──「 *STALKING* 
-▢ *🔖Name:* ${res.name} 
-▢ *🔖Username:* ${res.username}
-▢ *👥Follower:* ${res.followersH}
-▢ *🫂Following:* ${res.followingH}
-▢ *📌Bio:* ${res.description}
-▢ *🏝️Posts:* ${res.postsH}
-▢ *🔗 Link* : https://instagram.com/${res.username.replace(/^@/, '')}
-└────────────`
-     await XeonBotInc.sendMessage(m.chat, {image: { url: res.profilePic }, caption: te }, {quoted: m})
+if (!text) return replygcxeon(`Enter Instagram Username\n\nExample: ${prefix + command} Miyan`)
+let igst = fetchJson(`https://aemt.me/download/igstalk?username=${text}`)
+let txt = `
+▢ *🔖Username:* ${igst.result.username}
+▢ *🔖FullName:* ${igst.result.fullName}
+▢ *📌Bio:* ${igst.result.bio}
+▢ *👥Followers:* ${igst.result.followers}
+▢ *🫂Following:* ${igst.result.following}
+`
+await XeonBotInc.sendMessage(m.chat, {image: await fetchBuffer(igst.result.photoUrl), caption: txt}, {quoted: m})
 }
 break
 case 'ghstalk': case 'githubstalk':{

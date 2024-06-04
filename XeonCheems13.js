@@ -4919,7 +4919,7 @@ let yts = require("yt-search")
 let search = await yts(text)
 let anump4 = search.videos[0]
 let anuthumbnail = search.all[0].thumbnail
-XeonBotInc.sendMessage(m.chat,{
+await XeonBotInc.sendMessage(m.chat,{
     audio: {url: `https://aemt.me/downloadAudio?URL=${anump4.url}&videoName=audio`},
     mimetype: 'audio/mp4', ptt: true, fileName: getRandom('.mp3'),
 contextInfo:{
@@ -4945,7 +4945,7 @@ let anumek = `
 Title: ${anump4.title}
 Duration: ${anump4.timestamp}
 `
-XeonBotInc.sendMessage(m.chat,{
+await XeonBotInc.sendMessage(m.chat,{
     video: {url: `https://aemt.me/downloadVideo?URL=${anump4.url}&videoName=video`},
     mimetype: 'video/mp4', fileName: getRandom('.mp4'), caption: anumek
 },{quoted:m})
@@ -5242,58 +5242,23 @@ ID Zone: ${q.split("|")[1]}`)
 break
 case 'spotify':{
 	if (!text) return replygcxeon(`*Please enter a song name*`)
-    try {
-        const apiUrl = `https://www.guruapi.tech/api/spotifyinfo?text=${encodeURIComponent(text)}`
-        const response = await fetch(apiUrl);
-        if (!response.ok) {
-            console.log('Error searching for song:', response.statusText)
-            return replygcxeon('Error searching for song')
+	let spotjson = await fetchJson(`https://aemt.me/search?query=${text}`)
+	await XeonBotInc.sendMessage(m.chat,{
+    audio: {url: `https://aemt.me/download?url=${spotjson.data[0].url}`},
+    mimetype: 'audio/mp4', ptt: true, fileName: getRandom('.mp3'),
+contextInfo:{
+        externalAdReply:{
+            title:spotjson.data[0].title,
+            body: botname,
+            thumbnail: await fetchBuffer(spotjson.data[0].thumbnail),
+            sourceUrl: websitex,
+            mediaType:2,
+            mediaUrl:spotjson.data[0].url,
         }
-        const data = await response.json()
-        const coverimage = data.spty.results.thumbnail
-        const name = data.spty.results.title
-        const slink = data.spty.results.url
-        const dlapi = `https://www.guruapi.tech/api/spotifydl?text=${encodeURIComponent(text)}`
-        const audioResponse = await fetch(dlapi)
-        if (!audioResponse.ok) {
-            console.log('Error fetching audio:', audioResponse.statusText)
-            return replygcxeon('Error fetching audio')
-        }
-        const audioBuffer = await audioResponse.buffer()
-        const tempDir = os.tmpdir()
-        const audioFilePath = path.join(tempDir, 'audio.mp3')
-        try {
-            await fs.promises.writeFile(audioFilePath, audioBuffer)
-        } catch (writeError) {
-            console.error('Error writing audio file:', writeError)
-            return replygcxeon( 'Error writing audio file')
-        }
-        let doc = {
-            audio: {
-              url: audioFilePath
-            },
-            mimetype: 'audio/mpeg',
-            ptt: true,
-            waveform:  [100, 0, 100, 0, 100, 0, 100],
-            fileName: "dgxeon",
-            contextInfo: {
-              mentionedJid: [m.sender],
-              externalAdReply: {
-                title: `PLAYING TO ${name}`,
-                body: botname,
-                thumbnailUrl: coverimage,
-                sourceUrl: websitex,
-                mediaType: 1,
-                renderLargerThumbnail: true
-              }
-            }
-        }        
-        await XeonBotInc.sendMessage(m.chat, doc, { quoted: m })
-    } catch (error) {
-        console.error('Error fetching Spotify data:', error)
-        return replygcxeon('*Error*')
-    }
-    }
+
+    },
+},{quoted:m})
+	}
     break
 case 'imdb':
 if (!text) return replygcxeon(`_Name a Series or movie`)
@@ -8707,23 +8672,21 @@ ${translatedChapterHindi.text}`
   replygcxeon(geminii.result)
   }
   break
-  case 'pixiv2': {
-  if (m.isGroup && !XeonTheCreator) return XeonStickPrivate()
-  if (!text) return replygcxeon(`Example Usage : ${prefix + command} Shiroko`)
-  let pixivv = await fetchJson(`https://aemt.me/pixiv?query=${text}`)
-  for (let pixx of pixivv.result) {
-  await XeonBotInc.sendMessage(m.chat, {image : await fetchBuffer(pixx.urls.regular)}, { quoted: m })
-  }
-  }
-  break
-  case 'toanime': {
-  if (!quoted) return replygcxeon(`Send/Reply Images With Captions ${prefix+command}`)
-  let media = await XeonBotInc.downloadAndSaveMediaMessage(quoted)
-  let mem = await TelegraPh(media)
-  let aiurl = fetchJson(`https://aemt.me/toanime?url=${mem}`)
-  await XeonBotInc.sendMessage(m.chat, {image : await fetchBuffer(aiurl.url)}, { quoted: m })
-  }
-  break
+  // case 'pixiv2': {
+  // if (m.isGroup && !XeonTheCreator) return XeonStickPrivate()
+  // if (!text) return replygcxeon(`Example Usage : ${prefix + command} Shiroko`)
+  // let pixivv = await fetchJson(`https://aemt.me/pixiv?query=${text}`)
+  // await XeonBotInc.sendMessage(m.chat, {image : await fetchBuffer(pixivv.result[0]..urls.regular)}, { quoted: m })
+  // }
+  // break
+  // case 'toanime': {
+  // if (!quoted) return replygcxeon(`Send/Reply Images With Captions ${prefix+command}`)
+  // let media = await XeonBotInc.downloadAndSaveMediaMessage(quoted)
+  // let mem = await TelegraPh(media)
+  // let aiurl = await fetchJson(`https://aemt.me/toanime?url=${mem}`)
+  // await XeonBotInc.sendMessage(m.chat, {image : {url: aiurl.url}}, { quoted: m })
+  // }
+  // break
   case 'translate':{
   	if (!q) return replygcxeon(`*Where is the text*\n\n*𝙴xample usage*\n*${prefix + command} <language id> <text>*\n*${prefix + command} ja yo wassup*`)
   	const defaultLang = 'en'
@@ -9351,7 +9314,7 @@ const { File } = require('megajs');
     }
 }
 break
-case 'diffusiob':{
+case 'stablediffusion2':{
 if (!text) return replygcxeon('What do u want to make?')
     let myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");

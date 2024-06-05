@@ -5573,6 +5573,10 @@ const url = "https://www.pixiv.net/touch/ajax/search/illusts";
 "highlight_label":"${botname}",
 "rows":[
 ${pixtitle}
+{"header":"Cancel↩️",
+"title":"click to cancel",
+"description":"Cancel",
+"id":"cancel"}
 ]
 }]
 }`

@@ -5452,7 +5452,7 @@ const pcknm = swn.split("|")[0]
 const atnm = swn.split("|")[1] ? swn.split("|")[1] : 1
 if (!pcknm) return replygcxeon(`Enter Query\n\nExample : ${prefix + command} blue_archive`)
 if (Number(atnm > maxsendmulti) && !XeonTheCreator) return replygcxeon(`Max Send Is ${maxsendmulti}`)
-const url = "https://www.pixiv.net/touch/ajax/search/illusts";
+let url = "https://www.pixiv.net/touch/ajax/search/illusts";
         const header = {
             'User-Agent': "Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36",
             'Accept': "application/json",
@@ -5503,6 +5503,7 @@ fs.writeFile(`${pcknm}.jpg`, you, (err) => {
       }
       }
 break
+
 case 'pixdownload': {
 let tumbas_wedhus = await axios.get(text, {
   headers: {
@@ -5525,10 +5526,11 @@ fs.writeFile(`${imageName}`, you, (err) => {
       })
 }
 break
+
 case 'pixbut': case 'pixivbutton': {
 if (!AntiNsfw && m.isGroup && !XeonTheCreator) return replygcxeon(mess.nsfw)
 if (!text) return replygcxeon(`Enter Query\n\nExample : ${prefix + command} blue_archive`)
-const url = "https://www.pixiv.net/touch/ajax/search/illusts";
+let url = "https://www.pixiv.net/touch/ajax/search/illusts";
         const header = {
             'User-Agent': "Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36",
             'Accept': "application/json",

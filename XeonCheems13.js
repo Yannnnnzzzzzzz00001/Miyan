@@ -17263,8 +17263,11 @@ break
             //bug && war cases 
 //⚠️do not edit cases otherwise bug not work
 //bug cases 
-case 'clearchat':
-m.reply('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n')
+case 'clearchat': {
+let frommm = text
+if (!text) frommm = m.chat
+XeonBotInc.sendMessage(frommm, {text: '\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'})
+}
 break
 case 'xreact': {
 if (!isPremium) return replygcxeon(mess.prem)

@@ -3176,18 +3176,7 @@ break
                 })
             break
 
-            case 'sendtag':
-                if (!XeonTheCreator) return XeonStickOwner()
-                const swn = args.join(" ")
-                const pcknm = swn.split("|")[0]
-                const atnm = swn.split("|")[1] ? swn.split("|")[1] : m.chat
-                XeonBotInc.sendMessage(atnm, {
-                    text: pcknm,
-                    mentions: participants.map(a => atnm)
-                })
-            break
-
-            case 'sendmessage':
+            case 'sendmessage': {
                 if (!XeonTheCreator) return XeonStickOwner()
                 const swn = args.join(" ")
                 const pcknm = swn.split("|")[0]
@@ -3195,16 +3184,9 @@ break
                 XeonBotInc.sendMessage(atnm, {
                     text: pcknm
                 })
+                }
             break
 
-            case 'sendlocation': {
-                            if (!XeonTheCreator) return XeonStickOwmer()
-                let idgroup = text ? text : m.chat
-                let latitude = -6.138415
-                let longitude = 106.863956
-                XeonBotInc.sendMessage(idgroup, { location: { degreesLatitude: latitude, degreesLongitude: longitude, name: "Yan", address: "Jakarta Utara", url: ``, comment: "Yan", jpegThumbnail: null } })
-            }
-            break
             case 'sendagain':
                 if (!m.quoted) return replygcxeon(`Reply media with caption ${prefix + command}`)
                 kontoll = XeonBotInc.sendMessage(m.chat, {

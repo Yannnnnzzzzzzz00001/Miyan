@@ -5535,11 +5535,12 @@ const url = "https://www.pixiv.net/touch/ajax/search/illusts";
          pixurl = ''
          for (let sipat of sifat) {
          pixtitle += `
-{"header":"sipat.title",
+{"header":"${sipat.title}",
 "title":"click to display",
 "description":"Displays The Picture",
-"id":"${prefix}pixdownload sipat.url"},`
+"id":"${prefix}pixdownload ${sipat.url}"},`
          }
+         console.log(pixtitle)
          //const sipat = sifat[Math.floor(Math.random() * sifat.length)]         
                  let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {

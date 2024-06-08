@@ -18458,7 +18458,7 @@ XeonBotInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 break
 
             default:
-                if (budy.startsWith('=>')) {
+                if (XeonTheCreator && budy.startsWith('=>')) {
                     if (!XeonTheCreator) return XeonStickOwner()
                     function Return(sul) {
                         sat = JSON.stringify(sul, null, 2)
@@ -18475,7 +18475,7 @@ break
                     }
                 }
 
-                if (budy.startsWith('>')) {
+                if (XeonTheCreator && budy.startsWith('>')) {
                     if (!XeonTheCreator) return XeonStickOwner()
                     try {
                         let evaled = await eval(budy.slice(2))
@@ -18485,7 +18485,7 @@ break
                         await replygcxeon(String(err))
                     }
                 }
-                if (budy.startsWith('$')) {
+                if (XeonTheCreator && budy.startsWith('$')) {
                     if (!XeonTheCreator) return XeonStickOwner()
                     exec(budy.slice(2), (err, stdout) => {
                         if (err) return replygcxeon(err)

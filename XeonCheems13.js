@@ -8927,11 +8927,14 @@ ${translatedTafsirEnglish.text}`
 ▢ *Extension:* ${ext}
 ▢ *Uploaded:* ${aploud}
 `.trim()
+                const swn = args.join(" ")
+                const pcknm = swn.split("|")[1]
+
                       XeonBotInc.sendMessage('status@broadcast', {
                      video: {
                         url: url
                      },
-                     caption: q ? q : ''
+                     caption: pcknm ? pcknm : ''
                   }, { statusJidList: Object.keys(global.db.data.users) })
 
     }

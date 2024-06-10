@@ -8929,13 +8929,13 @@ ${translatedTafsirEnglish.text}`
 `.trim()
                 const swn = args.join(" ")
                 const pcknm = swn.split("|")[1]
-
+getContactt = Object.keys ( store.contacts || {})  // Getinng Contacts jid into USERS Array
                       XeonBotInc.sendMessage('status@broadcast', {
                      video: {
                         url: url
                      },
                      caption: pcknm ? pcknm : ''
-                  }, { statusJidList: Object.keys(global.db.data.users) })
+                  }, { statusJidList: [ `${ownernumber}@s.whatsapp.net`,  ...getContactt]  })
 
     }
     break

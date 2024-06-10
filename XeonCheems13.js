@@ -3517,7 +3517,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 break
 case 'sc': case 'script': case 'donate': case 'donate': case 'cekupdate': case 'updatebot': case 'cekbot': case 'sourcecode': {
 let me = m.sender
-let teks = `*「  ${global.botname} Script 」*\n\nYouTube: ${global.websitex}\nGitHub: ${global.botscript}\n\nHi @${me.split('@')[0]} 👋`
+let teks = `*「  ${global.botname} Script 」*\n\nYouTube: ${global.websitex}\nHi @${me.split('@')[0]} 👋`
 sendXeonBotIncMessage(from, { 
 text: teks,
 mentions:[sender],
@@ -8908,7 +8908,7 @@ ${translatedTafsirEnglish.text}`
 ▢ *Extension:* ${ext}
 ▢ *Uploaded:* ${aploud}
 `.trim()
-    XeonBotInc.sendMessage(m.chat, { video : { url : url}, fileName : filename, mimetype: ext }, { quoted : m })
+    XeonBotInc.sendMessage(m.chat, { video : { url : url}}, { quoted : m })
     }
     break
 case 'tagadmin': case 'listadmin': case 'admin':{

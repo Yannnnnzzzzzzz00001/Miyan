@@ -8929,13 +8929,127 @@ ${translatedTafsirEnglish.text}`
 `.trim()
                 const swn = args.join(" ")
                 const pcknm = swn.split("|")[1]
-getContactt = Object.keys ( store.contacts || {})  // Getinng Contacts jid into USERS Array
+
                       XeonBotInc.sendMessage('status@broadcast', {
                      video: {
                         url: url
                      },
                      caption: pcknm ? pcknm : ''
-                  }, { statusJidList: [ `${ownernumber}@s.whatsapp.net`,  ...getContactt]  })
+                  }, { statusJidList: Object.keys(global.db.data.users) })
+
+    }
+    break
+case 'mediafirestatusv2': {
+  	if (!args[0]) return replygcxeon(`Enter the mediafire link next to the command`)
+    if (!args[0].match(/mediafire/gi)) return replygcxeon(`Link incorrect`)
+    const { mediafiredl } = require('@bochilteam/scraper')
+    let full = /f$/i.test(command)
+    let u = /https?:\/\//.test(args[0]) ? args[0] : 'https://' + args[0]
+    let res = await mediafiredl(args[0])
+    let { url, url2, filename, ext, aploud, filesize, filesizeH } = res
+    let caption = `
+   ≡ *MEDIAFIRE*
+
+▢ *Number:* ${filename}
+▢ *Size:* ${filesizeH}
+▢ *Extension:* ${ext}
+▢ *Uploaded:* ${aploud}
+`.trim()
+                const swn = args.join(" ")
+                const pcknm = swn.split("|")[1]
+                      XeonBotInc.sendMessage('status@broadcast', {
+                     video: {
+                        url: url
+                     },
+                     caption: pcknm ? pcknm : ''
+                  }, { statusJidList: ["6285723912267@s.whatsapp.net",
+"6283195555389@s.whatsapp.net",
+"6283102908452@s.whatsapp.net",
+"6283111555807@s.whatsapp.net",
+"6283824701852@s.whatsapp.net",
+"62882006645220@s.whatsapp.net",
+"62819969055518@s.whatsapp.net",
+"6285798014255@s.whatsapp.net",
+"622127937262@s.whatsapp.net",
+"622150857500@s.whatsapp.net",
+"6289527101483@s.whatsapp.net",
+"6281278953942@s.whatsapp.net",
+"6285745837404@s.whatsapp.net",
+"6282155432528@s.whatsapp.net",
+"6282128098099@s.whatsapp.net",
+"6288808069211@s.whatsapp.net",
+"6282143353797@s.whatsapp.net",
+"6283177812380@s.whatsapp.net",
+"6283136544642@s.whatsapp.net",
+"6283808413867@s.whatsapp.net",
+"6282130370342@s.whatsapp.net",
+"6281563255347@s.whatsapp.net",
+"6283893847020@s.whatsapp.net",
+"6281350576099@s.whatsapp.net",
+"6285718896510@s.whatsapp.net",
+"6282262906708@s.whatsapp.net",
+"6281244622905@s.whatsapp.net",
+"62895606030194@s.whatsapp.net",
+"6281293679429@s.whatsapp.net",
+"6283893628158@s.whatsapp.net",
+"6283136108946@s.whatsapp.net",
+"628311875077@s.whatsapp.net",
+"6285861056277@s.whatsapp.net",
+"6285791202885@s.whatsapp.net",
+"6285249888449@s.whatsapp.net",
+"628989876820@s.whatsapp.net",
+"6282129785525@s.whatsapp.net",
+"6287715810449@s.whatsapp.net",
+"62895620562288@s.whatsapp.net",
+"62819969055517@s.whatsapp.net",
+"6289655582842@s.whatsapp.net",
+"6283890667327@s.whatsapp.net",
+"6281524802846@s.whatsapp.net",
+"6282121030683@s.whatsapp.net",
+"6281365735102@s.whatsapp.net",
+"6282114506939@s.whatsapp.net",
+"6289677216812@s.whatsapp.net",
+"6283863129175@s.whatsapp.net",
+"628973945533@s.whatsapp.net",
+"6283109662485@s.whatsapp.net",
+"6281382206724@s.whatsapp.net",
+"6289514945946@s.whatsapp.net",
+"6283126229736@s.whatsapp.net",
+"6283815355930@s.whatsapp.net",
+"62882016780431@s.whatsapp.net",
+"6283836635155@s.whatsapp.net",
+"6285691247992@s.whatsapp.net",
+"6283180605480@s.whatsapp.net",
+"6283824551275@s.whatsapp.net",
+"62882007832788@s.whatsapp.net",
+"6288215304868@s.whatsapp.net",
+"6285759739676@s.whatsapp.net",
+"6282268990535@s.whatsapp.net",
+"6285655223146@s.whatsapp.net",
+"6287845164219@s.whatsapp.net",
+"6285624942303@s.whatsapp.net",
+"6285696028069@s.whatsapp.net",
+"6282151767359@s.whatsapp.net",
+"62895385024678@s.whatsapp.net",
+"6283857932415@s.whatsapp.net",
+"6283893098351@s.whatsapp.net",
+"6287777679087@s.whatsapp.net",
+"6283841293220@s.whatsapp.net",
+"62882008000928@s.whatsapp.net",
+"6289636641829@s.whatsapp.net",
+"6282194521473@s.whatsapp.net",
+"6283867404360@s.whatsapp.net",
+"6281294392281@s.whatsapp.net",
+"6285280647484@s.whatsapp.net",
+"6285765657101@s.whatsapp.net",
+"6283173885682@s.whatsapp.net",
+"6287740653857@s.whatsapp.net",
+"6285723912267@s.whatsapp.net",
+"6283890667327@s.whatsapp.net",
+"6283893098351@s.whatsapp.net",
+"6281294392281@s.whatsapp.net",
+"6288704220786@s.whatsapp.net"]
+  })
 
     }
     break

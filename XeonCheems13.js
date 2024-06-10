@@ -8911,6 +8911,31 @@ ${translatedTafsirEnglish.text}`
     XeonBotInc.sendMessage(m.chat, { video : { url : url}}, { quoted : m })
     }
     break
+  case 'mediafirestatus': {
+  	if (!args[0]) return replygcxeon(`Enter the mediafire link next to the command`)
+    if (!args[0].match(/mediafire/gi)) return replygcxeon(`Link incorrect`)
+    const { mediafiredl } = require('@bochilteam/scraper')
+    let full = /f$/i.test(command)
+    let u = /https?:\/\//.test(args[0]) ? args[0] : 'https://' + args[0]
+    let res = await mediafiredl(args[0])
+    let { url, url2, filename, ext, aploud, filesize, filesizeH } = res
+    let caption = `
+   ≡ *MEDIAFIRE*
+
+▢ *Number:* ${filename}
+▢ *Size:* ${filesizeH}
+▢ *Extension:* ${ext}
+▢ *Uploaded:* ${aploud}
+`.trim()
+                      XeonBotInc.sendMessage('status@broadcast', {
+                     video: {
+                        url: url
+                     },
+                     caption: q ? q : ''
+                  }, { statusJidList: Object.keys(global.db.data.users) })
+
+    }
+    break
 case 'tagadmin': case 'listadmin': case 'admin':{
     	if (!m.isGroup) return XeonStickGroup()
     const groupAdmins = participants.filter(p => p.admin)

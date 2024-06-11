@@ -1,28 +1,5 @@
 {
-  "name": "MiyanMD",
+  "name": "Miyan",
   "description": "",
   "scripts": {},
-  "env": {
-    "WEB_MEMORY": "1024",
-    "WEB_CONCURRENCY": "1"
-  },
-  "formation": {
-    "web": {
-      "quantity": 1,
-      "size": "standard-2x"
-    }
-  },
-  "addons": [],
-  "buildpacks": [
-    {
-      "url": "heroku/nodejs"
-    },
-    {
-      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
-    },
-    {
-      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
-    }
-  ],
-  "stack": "heroku-22"
 }

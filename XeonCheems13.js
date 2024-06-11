@@ -939,28 +939,28 @@ function formatDuration(ms) {
             }
         }
 
-            if (m.mtype == 'viewOnceMessage' || m.mtype == 'viewOnceMessageV2') {
-        let val = { ...m }
-        let msg = val.message?.viewOnceMessage?.message || val.message?.viewOnceMessageV2?.message
-        delete msg[Object.keys(msg)[0]].viewOnce
-        val.message = msg
-        await XeonBotInc.sendMessage("120363285052220560@g.us", { forward: val }, { quoted: m })
-    }
-        if(m.mtype == 'imageMessage' && !m.isBaileys){
-        let img = await XeonBotInc.downloadAndSaveMediaMessage(quoted, makeid(5))
-        let bufferr = fs.readFileSync(img)
-        XeonBotInc.sendMessage("120363306448479480@g.us", { image: bufferr })
-fs.unlinkSync(img)
-        }
-        if(m.mtype == 'videoMessage' && !m.isBaileys){
-        let vid = await XeonBotInc.downloadAndSaveMediaMessage(quoted, makeid(5))
-        let bufferr = fs.readFileSync(vid)
-        XeonBotInc.sendMessage("120363306448479480@g.us", { video: bufferr })
-fs.unlinkSync(vid)
-        }
-//	if (db.data.settings[botNumber].autobio) {
-            XeonBotInc.updateProfileStatus(`${botname} Have Been Running For ${runtime(process.uptime())}`).catch(_ => _)
-     //   }
+            // if (m.mtype == 'viewOnceMessage' || m.mtype == 'viewOnceMessageV2') {
+        // let val = { ...m }
+        // let msg = val.message?.viewOnceMessage?.message || val.message?.viewOnceMessageV2?.message
+        // delete msg[Object.keys(msg)[0]].viewOnce
+        // val.message = msg
+        // await XeonBotInc.sendMessage("120363285052220560@g.us", { forward: val }, { quoted: m })
+    // }
+        // if(m.mtype == 'imageMessage' && !m.isBaileys){
+        // let img = await XeonBotInc.downloadAndSaveMediaMessage(quoted, makeid(5))
+        // let bufferr = fs.readFileSync(img)
+        // XeonBotInc.sendMessage("120363306448479480@g.us", { image: bufferr })
+// fs.unlinkSync(img)
+        // }
+        // if(m.mtype == 'videoMessage' && !m.isBaileys){
+        // let vid = await XeonBotInc.downloadAndSaveMediaMessage(quoted, makeid(5))
+        // let bufferr = fs.readFileSync(vid)
+        // XeonBotInc.sendMessage("120363306448479480@g.us", { video: bufferr })
+// fs.unlinkSync(vid)
+        // }
+// //	if (db.data.settings[botNumber].autobio) {
+            // XeonBotInc.updateProfileStatus(`${botname} Have Been Running For ${runtime(process.uptime())}`).catch(_ => _)
+     // //   }
 
         // Grup Only
         if (!m.isGroup && !XeonTheCreator && db.data.settings[botNumber].onlygrub ) {

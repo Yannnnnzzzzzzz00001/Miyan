@@ -209,11 +209,6 @@ try{
             console.log(color(`${themeemoji} CREDIT: ${wm}\n`,'magenta'))
             XeonBotInc.sendMessage(ownernumber + "@s.whatsapp.net", {text: "Bot Is Running..."})
             setInterval(() => {
-exec(`find . -type f -name "*.mp3" -delete`)
-exec(`find . -type f -name "*.m4a" -delete`)
-exec(`npm cache clean --force`)
-}, 10 * 60 * 1000)
-            setInterval(() => {
             timeyann = moment.tz('Asia/Jakarta').format('HH:mm:ss')
             secyann = moment.tz('Asia/Jakarta').format('HH:mm:ss')
             dateyan = moment.tz('Asia/Jakarta').format('DD/MM/YYYY')

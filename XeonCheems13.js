@@ -1849,13 +1849,6 @@ case 'listowner': {
                 });
             }
             break
-            case 'clearmedia': {
-            if (!XeonTheCreator) return XeonStickOwner()
-            XeonStickWait()
-            exec(`find . -type f -name "*.m4a" -delete`)
-            exec(`find . -type f -name "*.mp3" -delete`)
-            }
-            break
             case 'join':
                 try {
                     if (!XeonTheCreator) return XeonStickOwner()

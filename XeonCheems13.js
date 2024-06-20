@@ -1564,7 +1564,7 @@ click https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] 
 	    } //end
         
         //user db
-        if (isCommand && !isUser) {
+        if (!isUser) {
 xeonverifieduser.push(sender)
 fs.writeFileSync('./src/data/role/user.json', JSON.stringify(xeonverifieduser, null, 2))
 }
@@ -5001,7 +5001,7 @@ if (!q) return replygcxeon( `Example : ${prefix + command} link`)
 if (!q.includes('tiktok')) return replygcxeon(`Link Invalid!!`)
 await XeonBotInc.sendMessage(m.chat, { react: { text: "⏱️",key: m.key,}})   
 let anu = await fetchJson(`https://api.junn4.my.id/download/tiktok?url=${q}`)
-XeonBotInc.sendMessage(m.chat, { video: { url: anu.result.Medium.url}, caption: anu.result.caption}, {quoted: m})
+await XeonBotInc.sendMessage(m.chat, { video: { url: anu.result.Medium.url}, caption: anu.result.caption}, {quoted: m})
 await XeonBotInc.sendMessage(m.chat, { react: { text: "☑️",key: m.key,}})   
 }
 break
@@ -5013,7 +5013,7 @@ if (!q) return replygcxeon( `Example : ${prefix + command} link`)
 if (!q.includes('tiktok')) return replygcxeon(`Link Invalid!!`)
 await XeonBotInc.sendMessage(m.chat, { react: { text: "⏱️",key: m.key,}})   
 let anu = await fetchJson(`https://api.junn4.my.id/download/tiktok?url=${q}`)
-XeonBotInc.sendMessage(m.chat, { video: { url: anu.result.HD.url}, caption: anu.result.caption}, {quoted: m})
+await XeonBotInc.sendMessage(m.chat, { video: { url: anu.result.HD.url}, caption: anu.result.caption}, {quoted: m})
 await XeonBotInc.sendMessage(m.chat, { react: { text: "☑️",key: m.key,}})   
 }
 break
@@ -8901,7 +8901,7 @@ ${translatedTafsirEnglish.text}`
 ▢ *Extension:* ${ext}
 ▢ *Uploaded:* ${aploud}
 `.trim()
-    XeonBotInc.sendMessage(m.chat, { video : { url : url}}, { quoted : m })
+    await XeonBotInc.sendMessage(m.chat, { video : { url : url}}, { quoted : m })
     }
     break
   case 'mediafirestatus': {
@@ -8923,7 +8923,7 @@ ${translatedTafsirEnglish.text}`
                 const swn = args.join(" ")
                 const pcknm = swn.split("|")[1]
 
-                      XeonBotInc.sendMessage('status@broadcast', {
+                      await XeonBotInc.sendMessage('status@broadcast', {
                      video: {
                         url: url
                      },

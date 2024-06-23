@@ -286,7 +286,7 @@ module.exports = XeonBotInc = async (XeonBotInc, m, msg, chatUpdate, store) => {
         const isPremium= XeonTheCreator || checkPremiumUser(m.sender, premium)
         expiredPremiumCheck(XeonBotInc, m, premium)
         
-        const maxsendmulti = 3
+        maxsendmulti = 1
         
         //theme sticker reply
         const XeonStickWait = () => {
@@ -4330,6 +4330,12 @@ break
                   anticall = false
                   replygcxeon(`${command} is disabled`)
                }
+            }
+            break
+    case 'maxsendmulti': {
+             if (!XeonTheCreator) return XeonStickOwner()
+               if (args.length < 1) return replygcxeon('Input Number.')
+               maxsendmulti = args[0]
             }
             break
              break

@@ -39,7 +39,7 @@ global.autoblocknumber = '92' //set autoblock country code
 global.antiforeignnumber = '91' //set anti foreign number country code
 global.welcome = false //welcome/left in groups
 global.anticall = false //bot blocks user when called
-global.antiswview = true //auto status/story view
+global.antiswview = false //auto status/story view
 global.adminevent = false //show promote/demote message
 global.groupevent = false //show update messages in group chat
 //msg

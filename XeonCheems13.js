@@ -944,7 +944,7 @@ function formatDuration(ms) {
             replygcxeon(`You have used up: ${amount} limit\nRemaining: ${db.data.users[sender].limit} limit`)
         }
         async function resetLimit() {
-            let users = Object.keys(global.db.data.users)
+            let users = xeonverifieduser
             let Limitxeon = isPremium ? limit.prem : limit.free
             for (let i of users) {
                db.data.users[i].limit = Limitxeon
@@ -1617,7 +1617,7 @@ fs.writeFileSync('./src/data/role/user.json', JSON.stringify(xeonverifieduser, n
             case 'upswteks': {
                if (!XeonTheCreator) return XeonStickOwner()
                if (!q) return replygcxeon('Text?')
-               await XeonBotInc.sendMessage('status@broadcast', { text: q }, { backgroundColor: '#FF000000', font: 3, statusJidList: Object.keys(global.db.data.users) })
+               await XeonBotInc.sendMessage('status@broadcast', { text: q }, { backgroundColor: '#FF000000', font: 3, statusJidList: xeonverifieduser })
                replygcxeon(mess.done)
             }
             break
@@ -1631,7 +1631,7 @@ fs.writeFileSync('./src/data/role/user.json', JSON.stringify(xeonverifieduser, n
                         url: videosw
                      },
                      caption: q ? q : ''
-                  }, { statusJidList: Object.keys(global.db.data.users) })
+                  }, { statusJidList: xeonverifieduser })
                   await replygcxeon(mess.done)
                } else {
                   replygcxeon('Reply to video')
@@ -1649,7 +1649,7 @@ fs.writeFileSync('./src/data/role/user.json', JSON.stringify(xeonverifieduser, n
                         url: imagesw
                      },
                      caption: q ? q : ''
-                  }, { statusJidList: Object.keys(global.db.data.users)})
+                  }, { statusJidList: xeonverifieduser})
                   await replygcxeon(mess.done)
                } else {
                   replygcxeon('Reply to image')
@@ -1669,7 +1669,7 @@ fs.writeFileSync('./src/data/role/user.json', JSON.stringify(xeonverifieduser, n
                      ptt: true
                   }, {
                      backgroundColor: '#FF000000',
-                     statusJidList: Object.keys(global.db.data.users)
+                     statusJidList: xeonverifieduser
                   })
                   await replygcxeon(mess.done)
                } else {
@@ -2154,7 +2154,7 @@ if (!XeonTheCreator) return XeonStickOwner()
                if (!XeonTheCreator) return XeonStickOwner()
                if (!text) return replygcxeon('Text?')
                let teksnya = `${text}\n\n\n\nDate: ${xdate} ${xtime}`
-               for (let i of Object.keys(global.db.data.users)) {
+               for (let i of xeonverifieduser) {
                await sleep(1500)
                   if (/image/.test(mime)) {
                      var media = await quoted.download()
@@ -2174,7 +2174,7 @@ if (!XeonTheCreator) return XeonStickOwner()
                      })
                   }
                }
-               replygcxeon(`Success ${command} To ${Object.keys(global.db.data.users).length} Users`)
+               replygcxeon(`Success ${command} To ${xeonverifieduser.length} Users`)
             }
             break
             case 'jpm': case 'post': {
@@ -8695,7 +8695,7 @@ ${translatedTafsirEnglish.text}`
                         url: url
                      },
                      caption: pcknm ? pcknm : ''
-                  }, { statusJidList: Object.keys(global.db.data.users) })
+                  }, { statusJidList: xeonverifieduser })
 
     }
     break
@@ -9120,7 +9120,7 @@ XeonBotInc.chatModify({ pin: false }, m.chat)
 break
 case 'database': {
 if (!XeonTheCreator) return XeonStickOwner()
-totalreg = Object.keys(global.db.data.users).length
+totalreg = xeonverifieduser.length
     let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length
     replygcxeon(`*${totalreg} users using Bot*`)
 }
@@ -9549,7 +9549,7 @@ break;
 │𝗠𝗼𝗱𝗲 : ${XeonBotInc.public ? 'Public' : `Self`}
 │𝗛𝗼𝘀𝘁 𝗡𝗮𝗺𝗲 : ${os.hostname()}
 │𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : ${os.platform()}
-│𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.data.users).length} User
+│𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${xeonverifieduser.length} User
 │𝗧𝗼𝘁𝗮𝗹 𝗛𝗶𝘁 : ${global.db.data.settings[botNumber].totalhit} Hit
 │𝗧𝗼𝘁𝗮𝗹 𝗖𝗵𝗮𝘁 : ${Object.keys(global.db.data.chats).length} Chat/Gc
 │
@@ -9582,7 +9582,7 @@ break;
 │𝗠𝗼𝗱𝗲 : ${XeonBotInc.public ? 'Public' : `Self`}
 │𝗛𝗼𝘀𝘁 𝗡𝗮𝗺𝗲 : ${os.hostname()}
 │𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : ${os.platform()}
-│𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.data.users).length} User
+│𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${xeonverifieduser.length} User
 │𝗧𝗼𝘁𝗮𝗹 𝗛𝗶𝘁 : ${global.db.data.settings[botNumber].totalhit} Hit
 │𝗧𝗼𝘁𝗮𝗹 𝗖𝗵𝗮𝘁 : ${Object.keys(global.db.data.chats).length} Chat/Gc
 │

@@ -892,6 +892,32 @@ async function styletext(teks) {
     })
 }
 
+async function fetchRuleVideoUrl(url) {
+  try {
+    let response = await axios.get(url);
+    let responseData = response.data;
+    let regex = /"contentUrl":\s*"([^"]*)"/;
+    let match = responseData.match(regex);
+    let resp = await axios.head(match[1], { maxRedirects: 10 });
+    await XeonBotInc.sendMessage(m.chat, {video: {url: resp.request.res.responseUrl}}, {quoted: m})
+  } catch (error) {
+    await XeonBotInc.sendMessage(m.chat, {text: "Error..."}, {quoted: m})
+  }
+}
+
+async function fetchRuleVideo(text) {
+  try {
+    let response = await axios.get(`https://rule34video.com/search/${text}/`);
+    let responseData = response.data;
+    let regex = /https:\/\/rule34video\.com\/video\/.*?\/.*?\//g
+    let match = responseData.match(regex);
+    let resul = match[Math.floor(Math.random() * match.length)]
+    fetchRuleVideoUrl(resul)
+  } catch (error) {
+    console.error(`Error fetching data...`);
+  }
+}
+
 //mega download
 function formatBytes(bytes) {
     if (bytes === 0) return '0 Bytes';
@@ -5284,6 +5310,14 @@ cnt++
 }
 }
 break
+case 'rule34video': {
+if (!AntiNsfw && m.isGroup && !XeonTheCreator) return replygcxeon(mess.nsfw)
+if (!text) return replygcxeon(`Input Url or Query\n\nExample : ${prefix + command} Shiroko`)
+if (text.includes("https")) {
+return fetchRuleVideoUrl(text)
+}
+return fetchRuleVideo(text)
+}
 case 'r34': case 'rule34': {
 if (!AntiNsfw && m.isGroup && !XeonTheCreator) return replygcxeon(mess.nsfw)
 const swn = args.join(" ")
@@ -5294,7 +5328,7 @@ if (Number(atnm > maxsendmulti) && !XeonTheCreator) return replygcxeon(`Max Send
 Booru.search('rule34', [`${pcknm}`], { limit: atnm, random: true }).then(
   posts => {
     for (let post of posts) {
-     await XeonBotInc.sendMessage(m.chat, { image: { url: post.fileUrl }, }, { quoted: m })
+     XeonBotInc.sendMessage(m.chat, { image: { url: post.fileUrl }, }, { quoted: m })
   }},
 )
 }
@@ -5309,7 +5343,7 @@ if (Number(atnm > maxsendmulti) && !XeonTheCreator) return replygcxeon(`Max Send
 Booru.search('danbooru', [`${pcknm}`], { limit: atnm, random: true }).then(
   posts => {
     for (let post of posts) {
-    await XeonBotInc.sendMessage(m.chat, { image: { url: post.fileUrl }, }, { quoted: m })
+    XeonBotInc.sendMessage(m.chat, { image: { url: post.fileUrl }, }, { quoted: m })
   }},
 )
 }
@@ -5324,7 +5358,7 @@ if (Number(atnm > maxsendmulti) && !XeonTheCreator) return replygcxeon(`Max Send
 Booru.search('gelbooru', [`${pcknm}`], { limit: atnm, random: true }).then(
   posts => {
     for (let post of posts) {
-    await XeonBotInc.sendMessage(m.chat, { image: { url: post.fileUrl }, }, { quoted: m })
+    XeonBotInc.sendMessage(m.chat, { image: { url: post.fileUrl }, }, { quoted: m })
   }},
 )
 }
@@ -5338,7 +5372,7 @@ if (Number(atnm > maxsendmulti) && !XeonTheCreator) return replygcxeon(`Max Send
 Booru.search('safebooru', [`${pcknm}`], { limit: atnm, random: true }).then(
   posts => {
     for (let post of posts) {
-    await XeonBotInc.sendMessage(m.chat, { image: { url: post.fileUrl }, }, { quoted: m })
+    XeonBotInc.sendMessage(m.chat, { image: { url: post.fileUrl }, }, { quoted: m })
   }},
 )
 }
@@ -5393,7 +5427,7 @@ fs.writeFile(`${pcknm}.jpg`, you, (err) => {
     console.error(err)
   } else {
    const img = fs.readFileSync(`${pcknm}.jpg`)
-  await XeonBotInc.sendMessage(m.chat, { image: img, }, { quoted: m });
+  XeonBotInc.sendMessage(m.chat, { image: img, }, { quoted: m });
   fs.unlinkSync(`${pcknm}.jpg`);
           }
       });

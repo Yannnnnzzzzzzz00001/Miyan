@@ -6,6 +6,7 @@ RUN apt-get update && \
   imagemagick \
   webp && \
   apt-get upgrade -y && \
+  rm -rf /var/lib/apt/lists/*
 
 COPY . .
 

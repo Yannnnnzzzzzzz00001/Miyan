@@ -1,4 +1,3 @@
-
 FROM node:lts-buster
 
 RUN apt-get update && \
@@ -7,14 +6,7 @@ RUN apt-get update && \
   imagemagick \
   webp && \
   apt-get upgrade -y && \
-  rm -rf /var/lib/apt/lists/*
-
-COPY package.json .
-
-RUN npm install && npm install qrcode-terminal
 
 COPY . .
 
-EXPOSE 3000
-
-CMD ["node", "index.js", "--server"]
+RUN npm install && npm start

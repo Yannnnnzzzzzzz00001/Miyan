@@ -149,7 +149,7 @@ const xsteek = fs.readFileSync(`./src/data/function/XBug/x.webp`)
 //store database
 const db_respon_list = JSON.parse(fs.readFileSync('./src/store/list.json'))
 
-const xeonverifieduser = JSON.parse(fs.readFileSync('./src/data/role/user.json'))
+xeonverifieduser = JSON.parse(fs.readFileSync('./src/data/role/user.json'))
 
 global.db.data = JSON.parse(fs.readFileSync('./src/database.json'))
 if (global.db.data) global.db.data = {

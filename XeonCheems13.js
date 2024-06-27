@@ -978,7 +978,8 @@ function formatDuration(ms) {
         if (db.data.settings[botNumber].autoread) {
             XeonBotInc.readMessages([m.key])
         }
-                	XeonBotInc.sendPresenceUpdate('recording', m.chat)
+                	XeonBotInc.sendPresenceUpdate('typing', m.chat)
+                    XeonBotInc.updateProfileStatus(`${botname} Have Been Running For ${runtime(process.uptime())}`).catch(_ => _)
         //auto set bio\\
 
      //auto type record

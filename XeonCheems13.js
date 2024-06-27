@@ -5008,7 +5008,7 @@ if (!q) return replygcxeon( `Example : ${prefix + command} link`)
 if (!q.includes('tiktok')) return replygcxeon(`Link Invalid!!`)
 await XeonBotInc.sendMessage(m.chat, { react: { text: "⏱️",key: m.key,}})   
 let anu = await fetchJson(`https://api.junn4.my.id/download/tiktok?url=${q}`)
-XeonBotInc.sendMessage(m.chat, { audio: { url: anu.result.Medium.url}}, {quoted: m})
+XeonBotInc.sendMessage(m.chat, { audio: { url: anu.result.audio.url}}, {quoted: m})
 await XeonBotInc.sendMessage(m.chat, { react: { text: "☑️",key: m.key,}})   
 }
 break
